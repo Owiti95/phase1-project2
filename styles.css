@@ -1,0 +1,187 @@
+/* styles.css */
+
+/* Reset default padding and margin for ul and li */
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #388E3C; /* Green */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header h2 {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+/* Benefits section styles */
+#benefits {
+    background-color: #C8E6C9; /* Light Green */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.benefit {
+    display: inline-block;
+    width: calc(33.33% - 20px); /* Adjust width based on the number of benefits per row */
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+.benefit h3 {
+    color: #388E3C; /* Green */
+}
+
+/* About us section styles */
+#about-us {
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Testimonials section styles */
+#testimonials {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.testimonial {
+    display: inline-block;
+    width: calc(33.33% - 20px); /* Adjust width based on the number of testimonials per row */
+    margin: 10px;
+    padding: 20px;
+    background-color: #E0E0E0; /* Light Gray */
+    border-radius: 8px;
+    text-align: left;
+}
+
+.testimonial p {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+}
+
+.testimonial cite {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* FAQ section styles */
+#faq {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.faq-question {
+    background-color: #388E3C; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    background-color: #F2F2F2; /* Light Gray */
+    border-radius: 5px;
+}
+
+/* Newsletter section styles */
+#newsletter {
+    background-color: #388E3C; /* Green */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#newsletter-form {
+    margin-bottom: 20px;
+}
+
+#newsletter-form input[type="email"], #newsletter-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#newsletter-form button {
+    background-color: #4CAF50; /* Emerald */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#newsletter-form button:hover {
+    background-color: #388E3C; /* Green */
+}
+
+.view-products {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Emerald */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-products:hover {
+    background-color: #388E3C; /* Green */
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-links {
+    margin: 0;
+    padding: 0;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links li:last-child {
+    margin-right: 0;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
