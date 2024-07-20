@@ -1,157 +1,121 @@
-/* styles.css */
-
-/* Reset default padding and margin for ul and li */
-ul, li {
+/* Reset default padding and margin */
+* {
     margin: 0;
     padding: 0;
-    list-style-type: none;
+    box-sizing: border-box;
 }
 
-/* Container styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF; /* White */
+    color: #333333; /* Dark Gray */
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Header styles */
 header {
-    background-color: #388E3C; /* Green */
+    background-color: #388E3C; /* Emerald Green */
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 20px 0;
 }
 
 header h1 {
-    margin: 0;
     font-size: 2.5em;
-}
-
-header h2 {
-    margin-top: 10px;
-    font-size: 1.5em;
-}
-
-/* Benefits section styles */
-#benefits {
-    background-color: #C8E6C9; /* Light Green */
-    padding: 20px 0;
-    text-align: center;
-}
-
-.benefit {
-    display: inline-block;
-    width: calc(33.33% - 20px); /* Adjust width based on the number of benefits per row */
-    margin: 10px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    text-align: left;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
-}
-
-.benefit h3 {
-    color: #388E3C; /* Green */
-}
-
-/* About us section styles */
-#about-us {
-    padding: 20px 0;
-    text-align: center;
-}
-
-/* Testimonials section styles */
-#testimonials {
-    padding: 20px 0;
-    text-align: center;
-}
-
-.testimonial {
-    display: inline-block;
-    width: calc(33.33% - 20px); /* Adjust width based on the number of testimonials per row */
-    margin: 10px;
-    padding: 20px;
-    background-color: #E0E0E0; /* Light Gray */
-    border-radius: 8px;
-    text-align: left;
-}
-
-.testimonial p {
-    margin: 0 0 10px 0;
-    font-size: 1.1em;
-}
-
-.testimonial cite {
-    font-style: italic;
-    font-size: 0.9em;
-    color: #888;
-}
-
-/* FAQ section styles */
-#faq {
-    padding: 20px 0;
-    text-align: center;
-}
-
-.faq-question {
-    background-color: #388E3C; /* Green */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     margin-bottom: 10px;
 }
 
-.faq-answer {
-    display: none;
-    padding: 10px;
-    background-color: #F2F2F2; /* Light Gray */
-    border-radius: 5px;
+header p {
+    font-size: 1.2em;
 }
 
-/* Newsletter section styles */
-#newsletter {
-    background-color: #388E3C; /* Green */
-    color: white;
-    padding: 20px 0;
+section {
+    padding: 40px 0;
+}
+
+#products {
+    background-color: #C8E6C9; /* Light Green */
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-#newsletter-form {
+.product img {
+    max-width: 100%;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+#order {
+    background-color: #388E3C;
+    background-image: "https://media.istockphoto.com/id/1154805099/photo/zero-waste-and-eco-friendly-shopping-with-vegetables-and-fruits-in-textile-and-paper-bags-top.webp?b=1&s=170667a&w=0&k=20&c=JMK98QcptIqLFsnBZwVAGHC6dZaPrjQaqKDfuVJ-joA=";
+    color: white;
+}
+
+#orderForm {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#orderForm .form-group {
     margin-bottom: 20px;
 }
 
-#newsletter-form input[type="email"], #newsletter-form button {
+#orderForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#orderForm input[type="text"],
+#orderForm input[type="tel"],
+#orderForm textarea {
+    width: 100%;
     padding: 10px;
-    border: none;
+    border: 1px solid #CCCCCC;
     border-radius: 5px;
-    margin-right: 10px;
+    font-size: 1em;
 }
 
-#newsletter-form button {
-    background-color: #4CAF50; /* Emerald */
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#newsletter-form button:hover {
-    background-color: #388E3C; /* Green */
-}
-
-.view-products {
+#orderForm button {
     padding: 10px 20px;
+    background-color: #4CAF50; /* Green */
+    color: white;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50; /* Emerald */
-    color: white;
     cursor: pointer;
+    font-size: 1em;
     transition: background-color 0.3s ease;
 }
 
-.view-products:hover {
-    background-color: #388E3C; /* Green */
+#orderForm button:hover {
+    background-color: #388E3C; /* Darker Green */
+}
+
+footer {
+    background-color: #388E3C; /* Emerald Green */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 0.9em;
 }
 
 /* Footer styles */
@@ -184,4 +148,20 @@ footer {
 
 .social-links a:hover {
     text-decoration: underline;
+}
+
+#commentsDisplay{
+    border: solid green;
+    border-radius: 4px;
+    width: 100px;
+}
+
+
+#vegetablesContainer {
+    max-width: 1200px;
+    height: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    border: 1px solid rgb(13, 53, 13);
 }

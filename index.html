@@ -1,111 +1,68 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Organic E-commerce Landing Page</title>
+    <title>Nairobi green Grocer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Nairobi Organics</h1>
-            <h2>Your Source for Organic Products</h2>
-            <form id="newsletter-form">
-                <input type="email" id="email" placeholder="Enter your email...">
-                <button type="submit">Get Free Newsletter</button>
-                <button type="submit">VIEW PRODUCTS</button>
-            </form>
+            <h1>Green Market</h1>
+            <p>Fresh Vegetables Directly from Farmers</p>
         </div>
     </header>
-    <div id="facts">
-        <p id="quoteDisplay">health tips:</p>
-    </div>
-    
 
-    <section id="benefits">
+    <section id="products">
         <div class="container">
-            <div class="benefit">
-                <h3>Benefit 1</h3>
-                <p>Door delivery</p>
-            </div>
-            <div class="benefit">
-                <h3>Benefit 2</h3>
-                <p>100% organic </p>
-            </div>
-            <div class="benefit">
-                <h3>Benefit 3</h3>
-                <p>Affordable prices</p>
+            <h2>Products</h2>
+            <div id="vegetablesContainer" class="products-grid">
+                <!--vegetable images will be generated here-->
             </div>
         </div>
     </section>
 
-    <section id="about-us">
+    <section id="order">
         <div class="container">
-            <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <h3>Testimonials</h3>
-            <div class="testimonial">
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                <cite>John Doe</cite>
-            </div>
-            <div class="testimonial">
-                <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
-                <cite>Jane Smith</cite>
-            </div>
-            <div class="testimonial">
-                <p>"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
-                <cite>Michael Johnson</cite>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq">
-        <div class="container">
-            <h3>Frequently Asked Questions</h3>
-            <ul>
-                <li>
-                    <button class="faq-question">Question 1</button>
-                    <p class="faq-answer">Answer 1</p>
-                </li>
-                <li>
-                    <button class="faq-question">Question 2</button>
-                    <p class="faq-answer">Answer 2</p>
-                </li>
-                <li>
-                    <button class="faq-question">Question 3</button>
-                    <p class="faq-answer">Answer 3</p>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="newsletter">
-        <div class="container">
-            <form id="newsletter-form">
-                <input type="email" id="email" placeholder="Enter your email...">
-                <button type="submit">Get Free Newsletter <img src="images/shopping-cart-icon.png" alt="Shopping Cart"></button>
+            <h2>Place Your Order</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div id="productsList" class="form-group">
+                    <!-- Selected products and quantities will be generated here -->
+                </div>
+                <button type="submit">Place Order</button>
             </form>
-            <button class="view-products">View Products</button>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <ul class="social-links">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-            </ul>
-        </div>
-    </footer>
+<footer>
+    <div class="container">
+        <ul class="social-links">
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Instagram</a></li>
+            <li><a href="">Products</a></li>
+        </ul>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
