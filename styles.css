@@ -33,6 +33,11 @@ header p {
     font-size: 1.2em;
 }
 
+#about-us {
+    padding: 20px 0;
+    text-align: center;
+}
+
 section {
     padding: 40px 0;
 }
