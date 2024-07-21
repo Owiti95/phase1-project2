@@ -1,110 +1,24 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//     const vegetablesContainer = document.getElementById('vegetablesContainer');
-//     const orderForm = document.getElementById('orderForm');
-//     const productsList = document.getElementById('productsList');
-
-//     // Sample data (replace with actual data fetching if using a backend)
-//     const vegetables = [
-//         { name: 'Tomatoes', price: 150, image: 'https://media.istockphoto.com/id/1419141035/photo/cut-red-tomato-close-up-in-a-box.webp?b=1&s=170667a&w=0&k=20&c=o1dNGNHe54B1O11Ynce-WNQs-FnPx8gsF0NERTjmJC4=' },
-//         { name: 'Eggs', price: 600, image: 'https://media.istockphoto.com/id/1599935345/photo/chicken-eggs-on-carton.webp?b=1&s=170667a&w=0&k=20&c=J9694NIyCiDOB3JgIRjowdr3hOksydKLx3Bl3dcsIX4=' },
-//         { name: 'Onions', price: 150, image: 'https://media.istockphoto.com/id/1488345855/photo/many-red-onions-at-a-wholesale-vegetable-market.webp?b=1&s=170667a&w=0&k=20&c=b8dgtCGtDMPls9aVsgegqZOt-MI5c9wBPQvzy-KcJfw=' },
-//         { name: 'Kales', price: 150, image: 'https://media.istockphoto.com/id/1455022085/photo/curly-kale-on-a-wooden-cutting-board-healthy-eating-concept-superfoods-organic-food.webp?b=1&s=170667a&w=0&k=20&c=Hy4xl7Z0pe0PxM9lh5XyUeFH2nkyPSFF_4pSDr6RTNA=' },
-//         { name: 'Spinach', price: 150, image: 'https://media.istockphoto.com/id/172689786/photo/spinach-bunch-isolated-on-white-background.webp?b=1&s=170667a&w=0&k=20&c=W1MxW3LVqCt80xN2X4AMlapBaWxZT-f-BrNvGD7nMCE=' }
-//     ];
-
-//     // Function to display vegetables
-//     function displayVegetables() {
-//         vegetables.forEach(vegetable => {
-//             const productElement = document.createElement('div');
-//             productElement.classList.add('product');
-//             productElement.innerHTML = `
-//                 <img src="${vegetable.image}" alt="${vegetable.name}">
-//                 <h3>${vegetable.name}</h3>
-//                 <p>kshs${vegetable.price.toFixed(2)}</p>
-//                 <button class="buy-button" data-name="${vegetable.name}" data-price="${vegetable.price}">Buy</button>`;
-//             vegetablesContainer.appendChild(productElement);
-//         });
-//     }
-
-//     // Display vegetables initially
-//     displayVegetables();
-
-//     // Handle form submission
-//     orderForm.addEventListener('submit', function(event) {
-//         event.preventDefault();
-
-//         const formData = new FormData(orderForm);
-//         const order = {};
-
-//         formData.forEach((value, key) => {
-//             order[key] = value;
-//         });
-//         //POSTING
-//         let form = document.getElementById('form')
-//         form.addEventListener('submit', e => {
-//             //prevent form from reloading
-//             e.preventDefault()
-//             console.log(e)
-
-//             //getting form inputs
-//             let name = document.getElementById('name').value
-//             let address = document.getElementById('address').value
-//             let phone = document.getElementById('phone').value
-//             let products = document.getElementById
-//             //creating object from form input
-//             const formData = {
-//                 name : name,
-//                 address : address,
-//                 phone : phone
-//             }
-//             console.log(formData)
-//             //sending data to the server using fetch api
-//             fetch(apiUrl, {
-//                 method : "POST",
-//                 headers : {
-//                     "Content-Type" : "application/json",
-//                     "Accept": "application/json"
-//                 },
-//                 body: JSON.stringify(formData)
-//             })
-//             .then(res => res.json())
-//             .then(photo => console.log(photo))
-        
-//             // Resetting form inputs
-//             document.getElementById('name').value = ""
-//             document.getElementById('address').value = ""
-//             document.getElementById('phone').value = ""
-//         })
-//         // Process the order (send to backend or handle as needed)
-
-//         console.log('Order details:', order);
-
-//         // Clear products list and form after submission (for demo purposes)
-//         productsList.innerHTML = '';
-//         orderForm.reset();
-//     });
-
-//     // Handle buy button clicks (example: add product to order list)
-//     vegetablesContainer.addEventListener('click', function(event) {
-//         if (event.target.classList.contains('buy-button')) {
-//             const productName = event.target.dataset.name;
-//             const productPrice = parseFloat(event.target.dataset.price);
-
-//             const productItem = document.createElement('div');
-//             productItem.classList.add('product-item');
-//             productItem.innerHTML = `
-//                 <p>${productName} - kshs${productPrice.toFixed(2)}</p>`;
-//             productsList.appendChild(productItem);
-//         }
-        
-//     });
-// });
-
-
 document.addEventListener('DOMContentLoaded', function() {
-    const apiUrl = 'http://localhost:3000/vegetables'; //API endpoint
+    const apiUrl = 'https://nairobi-organics.vercel.app';
     const vegetablesContainer = document.getElementById('vegetablesContainer');
     const productsList = document.getElementById('productsList');
+
+
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const headerNav = document.querySelector('.header-nav');
+
+    hamburgerMenu.addEventListener('click', function() {
+        headerNav.classList.toggle('open');
+    });
+
+    // Closes the menu when a navigation link is clicked for convinient navigation
+    const navLinks = document.querySelectorAll('.header-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            headerNav.classList.remove('open');
+        });
+    });
+
 
     // Function to fetch and display vegetables
     function fetchAndDisplayVegetables() {
@@ -139,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Create element for selected product
             const productItem = document.createElement('div');
             productItem.classList.add('product-item');
-            productItem.innerHTML = `
-                <p>${productName} - kshs${productPrice.toFixed(2)}</p>`;
+            productItem.textContent = `
+                ${productName} - kshs${productPrice.toFixed(2)}`;
             productsList.appendChild(productItem);
         }
     });
@@ -169,13 +83,14 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             console.log('Order successfully submitted:', data);
-            // You can update UI or perform other actions upon successful submission
+
         })
         .catch(error => {
             console.error('Error submitting order:', error);
         });
 
-        // Reset form inputs
+
         orderForm.reset();
     });
 });
+

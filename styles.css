@@ -17,6 +17,96 @@ body {
     padding: 20px;
 }
 
+.hamburger-menu {
+    display: none; /* Hide by default on larger screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-menu:focus {
+    outline: none;
+}
+
+.hamburger-menu__line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav ul li {
+    margin-right: 20px;
+}
+
+.header-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.header-nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header-nav ul li a:hover {
+    color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu on smaller screens */
+    }
+
+    .header-nav {
+        display: none; /* Hide navigation links by default on smaller screens */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #f9f9f9;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .header-nav.open {
+        display: block; /* Show navigation links when menu is open */
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+    }
+
+    .header-nav ul li {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
+
 header {
     background-color: #388E3C; /* Emerald Green */
     color: white;
@@ -65,7 +155,9 @@ section {
     border-radius: 8px;
     overflow: auto;
 }
-
+.productItem input {
+    color: #333;
+}
 #order {
     background-color: #388E3C;
     background-image: "https://media.istockphoto.com/id/1154805099/photo/zero-waste-and-eco-friendly-shopping-with-vegetables-and-fruits-in-textile-and-paper-bags-top.webp?b=1&s=170667a&w=0&k=20&c=JMK98QcptIqLFsnBZwVAGHC6dZaPrjQaqKDfuVJ-joA=";
