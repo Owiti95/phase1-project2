@@ -39,8 +39,44 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.forEach((value, key) => {
             order[key] = value;
         });
+        //POSTING
+        let form = document.getElementById('form')
+        form.addEventListener('submit', e => {
+            //prevent form from reloading
+            e.preventDefault()
+            console.log(e)
 
+            //getting form inputs
+            let name = document.getElementById('name').value
+            let address = document.getElementById('address').value
+            let phone = document.getElementById('phone').value
+            let products = document.getElementById('productsList')
+            //creating object from form input
+            const formData = {
+                name : name,
+                address : address,
+                phone : phone
+            }
+            console.log(formData)
+            //sending data to the server using fetch api
+            fetch(apiUrl, {
+                method : "POST",
+                headers : {
+                    "Content-Type" : "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(res => res.json())
+            .then(photo => console.log(photo))
+        
+            // Resetting form inputs
+            document.getElementById('name').value = ""
+            document.getElementById('address').value = ""
+            document.getElementById('phone').value = ""
+        })
         // Process the order (send to backend or handle as needed)
+
         console.log('Order details:', order);
 
         // Clear products list and form after submission (for demo purposes)
@@ -60,5 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>${productName} - kshs${productPrice.toFixed(2)}</p>`;
             productsList.appendChild(productItem);
         }
+        
     });
 });
